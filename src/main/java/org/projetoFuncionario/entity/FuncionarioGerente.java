@@ -1,25 +1,30 @@
 package org.projetoFuncionario.entity;
 
-public class FuncionarioGerente extends Funcionario{
-    private static final double BONUS = 200.0; // Valor do bônus
+import javax.persistence.*;
 
-    // Construtor
+@Entity // Define que esta classe será uma entidade do banco de dados
+@Table(name = "TAB_FUNCIONARIO_GERENTE") // Nome da tabela específica para gerentes
+@DiscriminatorValue("Gerente") // Define o valor salvo na coluna 'tipo_funcionario'
+public class FuncionarioGerente extends Funcionario {
+
+    private static final double BONUS_GERENTE = 500.0; // Bônus fixo para gerentes
+
+    public FuncionarioGerente() {}
+
     public FuncionarioGerente(String nome, int horasTrabalhadas, double valorPorHora) {
         super(nome, horasTrabalhadas, valorPorHora);
     }
 
-    // Sobrescrevendo o método calcularSalario
+    // O gerente recebe um bônus fixo no salário
     @Override
     public double calcularSalario() {
-        double salarioBase = super.calcularSalario();
-        double bonusQuantidade = horasTrabalhadas / 15; // Um bônus a cada 15 horas trabalhadas
-        return salarioBase + (bonusQuantidade * BONUS);
+        return super.calcularSalario() + BONUS_GERENTE;
     }
 
-    // Sobrescrevendo o método imprimirInformacao
     @Override
     public void imprimirInformacao() {
         super.imprimirInformacao();
-        System.out.println("Funcionário Gerente recebe bônus de R$ " + BONUS + " a cada 15 horas trabalhadas.");
+        System.out.println("Cargo: Gerente");
+        System.out.println("Bônus Gerencial de R$ " + BONUS_GERENTE);
     }
 }
