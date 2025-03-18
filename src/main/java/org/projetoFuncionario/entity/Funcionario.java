@@ -13,6 +13,6 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return nome + " horas trabalhadas: " + horasTrabalhadas + " Valor por hora: R$:valorPorHora";
+        return nome + " horas trabalhadas: " + horasTrabalhadas + " Valor por hora: R$:" + valorPorHora;
     }
 }
