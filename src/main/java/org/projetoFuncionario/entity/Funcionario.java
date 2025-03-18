@@ -15,4 +15,8 @@ public class Funcionario {
     public String toString() {
         return nome + " horas trabalhadas: " + horasTrabalhadas + " Valor por hora: R$:" + valorPorHora;
     }
+
+    public double calcularSalario() {
+        return horasTrabalhadas * valorPorHora;
+    }
 }
