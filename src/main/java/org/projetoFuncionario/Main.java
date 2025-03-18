@@ -1,17 +1,18 @@
 package org.projetoFuncionario;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.projetoFuncionario.entity.Funcionario;
+import org.projetoFuncionario.entity.FuncionarioSenior;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Funcionario func1 = new Funcionario("Carlos", 40, 20.0);
+        FuncionarioSenior funcSenior = new FuncionarioSenior("Ana", 45, 25.0);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println("Informações do Funcionário Comum:");
+        func1.imprimirInformacao();
+        System.out.println();
+
+        System.out.println("Informações do Funcionário Sênior:");
+        funcSenior.imprimirInformacao();
     }
 }

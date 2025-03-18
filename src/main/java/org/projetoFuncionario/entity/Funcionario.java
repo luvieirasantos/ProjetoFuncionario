@@ -1,9 +1,9 @@
 package org.projetoFuncionario.entity;
 
 public class Funcionario {
-    private String nome;
-    private double horasTrabalhadas;
-    private double valorPorHora;
+    protected String nome;
+    protected double horasTrabalhadas;
+    protected double valorPorHora;
 
     public Funcionario(String nome, float horasTrabalhadas, double valorPorHora) {
         this.nome = nome;
@@ -11,9 +11,12 @@ public class Funcionario {
         this.valorPorHora = valorPorHora;
     }
 
-    @Override
-    public String toString() {
-        return nome + " horas trabalhadas: " + horasTrabalhadas + " Valor por hora: R$:" + valorPorHora;
+    // Método para imprimir as informações do funcionário
+    public void imprimirInformacao() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Horas Trabalhadas: " + horasTrabalhadas);
+        System.out.println("Valor por Hora: R$ " + valorPorHora);
+        System.out.println("Salário Final: R$ " + calcularSalario());
     }
 
     public double calcularSalario() {
