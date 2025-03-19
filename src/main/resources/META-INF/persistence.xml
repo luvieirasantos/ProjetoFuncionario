@@ -1,16 +1,18 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="oracle-pu">
         <properties>
-            <!-- Configuração do Banco de Dados Oracle -->
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL"/>
             <property name="javax.persistence.jdbc.user" value="rm558935"/>
             <property name="javax.persistence.jdbc.password" value="310805"/>
 
-            <!-- Dialeto do Hibernate para Oracle -->
+            <!-- Dialeto correto para Oracle -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
 
-            <!-- Para exibir os comandos SQL no console -->
+            <!-- Gera as tabelas automaticamente -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <!-- Loga as queries SQL geradas -->
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>
