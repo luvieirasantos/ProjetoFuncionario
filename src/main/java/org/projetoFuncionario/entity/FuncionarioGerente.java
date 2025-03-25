@@ -25,6 +25,6 @@ public class FuncionarioGerente extends Funcionario {
     public void imprimirInformacao() {
         super.imprimirInformacao();
         System.out.println("Cargo: Gerente");
-        System.out.println("Bônus Gerencial de R$ " + BONUS_GERENTE);
+        System.out.println("Bônus Gerencial fixo de R$ " + BONUS_GERENTE);
     }
 }
